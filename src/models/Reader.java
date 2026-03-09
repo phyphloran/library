@@ -1,19 +1,16 @@
 package models;
 
 
+import lombok.RequiredArgsConstructor;
 import java.util.concurrent.locks.Lock;
 
 
+@RequiredArgsConstructor
 public class Reader {
 
     private final Lock readLock;
 
     private final File file;
-
-    public Reader(Lock readLock, File file) {
-        this.readLock = readLock;
-        this.file = file;
-    }
 
     public void read(long readerId) {
         readLock.lock();

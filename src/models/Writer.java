@@ -1,19 +1,16 @@
 package models;
 
 
+import lombok.RequiredArgsConstructor;
 import java.util.concurrent.locks.Lock;
 
 
+@RequiredArgsConstructor
 public class Writer {
 
     private final Lock writeLock;
 
     private final File file;
-
-    public Writer(Lock writeLock, File file) {
-        this.writeLock = writeLock;
-        this.file = file;
-    }
 
     public void write(long writerId) {
         writeLock.lock();

@@ -1,12 +1,16 @@
 package models;
 
 
+import lombok.Getter;
+
+
+@Getter
 public class File {
 
-    private int value = 0;
+    private int value;
 
-    public int getValue() {
-        return value;
+    public File() {
+        this.value = 0;
     }
 
     public void increment() {
